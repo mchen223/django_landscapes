@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Landscapes</title>
+    <meta name="Landscapes" content="Landscapes Project">
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href="{% static 'landscapes/css/stylesheet.css' %}">
+</head>
+
+<body>
+  <h1>Your Random Image of the Day:</h1>
+  <h3>{{ request.session.message  }}</h3>
+  <div id='imgblock'>
+   {% for landscape in landscapes %}
+      <img src="{% static 'landscapes/imgs/'%}{{ landscape }}.jpg" alt='{{ landscape }}'>
+   {% endfor %}
+  </div>
+
+</body>
+
+</html>
