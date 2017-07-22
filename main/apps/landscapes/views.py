@@ -18,6 +18,6 @@ def show(request, number):
     elif 41 <= int(number) <= 50:
         landscapes = {'tropical'}
     else:
-        request.session['message'] = "I told you to use a number between 1 and 50, Ben."
+        request.session['message'] = "I told you to use a number between 1 and 50."
         landscapes = {'tyrion'}
     return render(request, 'landscapes/show.html', {'landscapes': landscapes})
